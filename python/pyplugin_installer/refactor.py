@@ -1,4 +1,28 @@
 # -*- coding:utf-8 -*-
+"""
+/***************************************************************************
+                            Plugin Installer module
+                             -------------------
+    Date                 : March 2020
+    Copyright            : (C) 2020 by Sebastian M. Ernst
+    Email                : ernst at pleiszenburg dot de
+
+    This module is based on two former plugin_installer plugins:
+      Copyright (C) 2007-2008 Matthew Perry
+      Copyright (C) 2008-2013 Borys Jurgiel
+      Copyright (C) 2020 Sebastian M. Ernst
+
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+"""
 
 """
 - One file per class?
