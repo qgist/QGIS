@@ -5,6 +5,10 @@
 - Auto-detect (and auto-import) repo types
 """
 
+class Settings:
+    """
+    Transparent wrapper around QgsSettings - so it can be exchanged (for testing etc)
+    """
 
 class Index:
     """
@@ -12,6 +16,9 @@ class Index:
 
     - properties:
         - list of present/registered repos
+        - allow experimental
+        - allow deprecated
+        - SETTINGS
     """
     def add_repo(self, **kwargs):
         pass
@@ -42,15 +49,33 @@ class Repository:
     - properties:
         - NAME
         - active/enabled
+        - writeable (FALSE for core plugins)
+        - autorefresh (on start)
+        - autorefresh_interval
+        - AUTH?
         - priority
         - available (i.e. contact to server?)
         - meta ...
+        - LIST OF PLUGINS
+        - SETTINGS
     """
+    def get_all_installed(self):
+        pass
+    def get_all_available(self):
+        """
+        Available plugins, compatible to QGIS version
+        """
+    def rename(self, new_name):
+        pass
     def refresh(self):
         pass
     def _fetch_index(self):
         """HTTP ..."""
         pass
+    @classmethod
+    def from_directory(cls, path, writeable = False):
+
+        return cls()
 
 class Plugin:
     """
@@ -68,8 +93,12 @@ class Plugin:
         - Installed
         - Installed version
         - Available versions (from sources ...)
+        - upgradable
+        - downgradable
+        - orphan
         - meta ...
         - Caches
+        - SETTINGS
     """
     def install(self):
         """
@@ -90,7 +119,10 @@ class Plugin:
     def get_versions(self):
         """
         Get versions of plugin
+        Filter versions compatible to QGIS version
         """
+        pass
+    def send_vote(self):
         pass
     def _fetch_available_versions(self):
         """HTTP ..."""
