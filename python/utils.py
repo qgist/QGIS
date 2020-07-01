@@ -21,6 +21,8 @@ __author__ = 'Martin Dobias'
 __date__ = 'November 2009'
 __copyright__ = '(C) 2009, Martin Dobias'
 
+__pluginmanager__ = True
+
 """
 QGIS utilities module
 
